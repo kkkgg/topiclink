@@ -5,39 +5,32 @@
     <meta charset="utf-8">
     <title>Topiclink</title>
     <script type="text/javascript">
-
-      var list = [
-        //["FINWVQUT", "https://redmine.qzc.co.jp/redmine/issues/581"],
-        //["2DTJXBOW", "https://redmine.qzc.co.jp/redmine/issues/581"],
-        //["MS7006QL", "https://redmine.qzc.co.jp/redmine/issues/581"],
-        //["UFV3YUHC", "https://redmine.qzc.co.jp/redmine/issues/581"],
-        //["L32TT44P", "https://redmine.qzc.co.jp/redmine/issues/581"],
-        //["FLATKCZX", "https://redmine.qzc.co.jp/redmine/issues/581"],
-        //["FFTRH70B", "https://redmine.qzc.co.jp/redmine/issues/2054"],
-      ];
-
-      fetch("topics.txt").then(function(response){
-        return response.text();
-      }).then(function(text){
-        console.log(text);
-        list = text.split("\n").map(l => l.split("\t"));
-      });
-
-      function getRec(topicid){
+      function getRec(list, topicid){
         return list.find(function(rec){
           return rec[0] == topicid;
         });
       }
 
-      var l = window.location;
-      var topicid = (l.pathname.match(/[^/]+$/) || [])[0];
-      if(topicid == "404.html") topicid = (l.hash.match(/[^#]+$/) || [])[0];
-      console.log({topicid: topicid});
-      var rec = getRec( topicid );
-      console.log(rec);
-      if(rec){
-        //l.replace(rec[1] + "#" + topicid);
-      }
+      fetch("topics.txt").then(function(response){
+        return response.text();
+      }).then(function(text){
+        //console.log(text);
+        return text.split("\n").map(l => l.split("\t"));
+      }).then(function(list){
+        //console.log(list);
+        var l = window.location;
+        var topicid = (l.pathname.match(/[^/]+$/) || [])[0];
+        if(topicid == "404.html") topicid = (l.hash.match(/[^#]+$/) || [])[0];
+        console.log({topicid: topicid});
+        var rec = getRec(list, topicid);
+        console.log(rec);
+        if(rec){
+          console.log({redirect_to: red[1]});
+          //l.replace(rec[1] + "#" + topicid);
+        }
+      });
+
+
     </script>
   </head>
   <body>

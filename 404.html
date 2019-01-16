@@ -17,9 +17,10 @@
       ];
 
       fetch("topics.txt").then(function(response){
-        var tsv = response.text();
-        console.log(tsv);
-        list = tsv.split("\n").map(l => l.split("\t"));
+        return response.text();
+      }).then(function(text){
+        console.log(text);
+        list = text.split("\n").map(l => l.split("\t"));
       });
 
       function getRec(topicid){

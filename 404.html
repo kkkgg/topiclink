@@ -17,7 +17,7 @@
         //console.log(text);
         return text.split("\n").map(l => l.split("\t"));
       }).then(function(list){
-        //console.log(list);
+        console.log(list);
         var l = window.location;
         var topicid = (l.pathname.match(/[^/]+$/) || [])[0];
         if(topicid == "404.html") topicid = (l.hash.match(/[^#]+$/) || [])[0];
@@ -25,8 +25,8 @@
         var rec = getRec(list, topicid);
         console.log(rec);
         if(rec){
-          console.log({redirect_to: red[1]});
-          //l.replace(rec[1] + "#" + topicid);
+          console.log({redirect_to: rec[1]});
+          l.replace(rec[1] + "#" + topicid);
         }
       });
 

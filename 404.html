@@ -5,15 +5,22 @@
     <meta charset="utf-8">
     <title>Topiclink</title>
     <script type="text/javascript">
+
       var list = [
-        ["FINWVQUT", "https://redmine.qzc.co.jp/redmine/issues/581"],
-        ["2DTJXBOW", "https://redmine.qzc.co.jp/redmine/issues/581"],
-        ["MS7006QL", "https://redmine.qzc.co.jp/redmine/issues/581"],
-        ["UFV3YUHC", "https://redmine.qzc.co.jp/redmine/issues/581"],
-        ["L32TT44P", "https://redmine.qzc.co.jp/redmine/issues/581"],
-        ["FLATKCZX", "https://redmine.qzc.co.jp/redmine/issues/581"],
-        ["FFTRH70B", "https://redmine.qzc.co.jp/redmine/issues/2054"],
+        //["FINWVQUT", "https://redmine.qzc.co.jp/redmine/issues/581"],
+        //["2DTJXBOW", "https://redmine.qzc.co.jp/redmine/issues/581"],
+        //["MS7006QL", "https://redmine.qzc.co.jp/redmine/issues/581"],
+        //["UFV3YUHC", "https://redmine.qzc.co.jp/redmine/issues/581"],
+        //["L32TT44P", "https://redmine.qzc.co.jp/redmine/issues/581"],
+        //["FLATKCZX", "https://redmine.qzc.co.jp/redmine/issues/581"],
+        //["FFTRH70B", "https://redmine.qzc.co.jp/redmine/issues/2054"],
       ];
+
+      fetch("topics.txt").then(function(response){
+        var tsv = response.text();
+        console.log(tsv);
+        list = tsv.split("\n").map(l => l.split("\t"));
+      });
 
       function getRec(topicid){
         return list.find(function(rec){
@@ -23,11 +30,12 @@
 
       var l = window.location;
       var topicid = (l.pathname.match(/[^/]+$/) || [])[0];
+      if(topicid == "404.html") topicid = (l.hash.match(/[^#]+$/) || [])[0];
       console.log({topicid: topicid});
       var rec = getRec( topicid );
       console.log(rec);
       if(rec){
-        l.replace(rec[1] + "#" + topicid);
+        //l.replace(rec[1] + "#" + topicid);
       }
     </script>
   </head>

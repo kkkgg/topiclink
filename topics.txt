@@ -5,3 +5,4 @@ UFV3YUHC	https://redmine.qzc.co.jp/redmine/issues/581
 L32TT44P	https://redmine.qzc.co.jp/redmine/issues/581
 FLATKCZX	https://redmine.qzc.co.jp/redmine/issues/581
 FFTRH70B	https://redmine.qzc.co.jp/redmine/issues/2054
+WORKINDX	file:///C:/boku/kami/index.txt

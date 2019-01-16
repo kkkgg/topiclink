@@ -40,7 +40,10 @@
       }
 
       var l = window.location;
-      var rec = get( (l.pathname.match(/[^/]+$/) || [])[0] );
+      var topicid = (l.pathname.match(/[^/]+$/) || [])[0];
+      console.log({topicid: topicid});
+      var rec = get( topicid );
+      console.log(rec);
       if(rec){
         l.replace(rec[1] + "#" + topicid);
       }

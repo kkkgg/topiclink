@@ -19,19 +19,22 @@
       }).then(function(list){
         console.log(list);
         var l = window.location;
-        var topicid = (l.pathname.match(/[^/]+$/) || [])[0];
-        if(topicid == "404.html") topicid = (l.hash.match(/[^#]+$/) || [])[0];
-        console.log({topicid: topicid});
-        var rec = getRec(list, topicid);
+        var topickey = (l.pathname.match(/[^/]+$/) || [])[0];
+        if(topickey == "404.html") topickey = (l.hash.match(/[^#]+$/) || [])[0];
+        console.log({topickey: topickey});
+        var rec = getRec(list, topickey);
         console.log(rec);
         if(rec){
           var url = rec[1];
           console.log({redirect_to: url});
           if(url.match(/^file:/)){
-            return url + "\n" + topicid;
+            return url + "\n" + topickey;
           } else{
-            l.replace(url + "#" + topicid);
+            l.replace(url + "#" + topickey);
           }
+        }
+        else{
+          return "unknown topic key"
         }
       });
 

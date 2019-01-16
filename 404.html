@@ -11,7 +11,7 @@
         });
       }
 
-      fetch("topics.txt").then(function(response){
+      var p1 = fetch("topics.txt").then(function(response){
         return response.text();
       }).then(function(text){
         //console.log(text);
@@ -28,17 +28,28 @@
           var url = rec[1];
           console.log({redirect_to: url});
           if(url.match(/^file:/)){
-            alert(url + "\n" + topicid);
+            return url + "\n" + topicid;
           } else{
             l.replace(url + "#" + topicid);
           }
         }
       });
 
+      var p2 = new Promise(function(resolve, reject){
+        window.onload = function(){
+          console.log("window.onload");
+          resolve();
+        };
+      });
 
+      Promise.all([p1, p2]).then(function(values){
+        console.log({values: values});
+        if(values.length > 0) document.getElementById('message').innerHTML = values[0];
+      });
     </script>
   </head>
   <body>
     topiclink redirector
+    <div id="message"></div>
   </body>
 </html>

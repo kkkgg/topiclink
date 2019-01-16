@@ -23,10 +23,27 @@
       // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
       // https://username.github.io/repo-name/?p=/one/two&q=a=b~and~c=d#qwe
       // Otherwise, leave segmentCount as 0.
-      var url = 'https://redmine.qzc.co.jp/redmine/issues/581#';
-      var segmentCount = 0;
+      var list = [
+        ["FINWVQUT", "https://redmine.qzc.co.jp/redmine/issues/581"],
+        ["2DTJXBOW", "https://redmine.qzc.co.jp/redmine/issues/581"],
+        ["MS7006QL", "https://redmine.qzc.co.jp/redmine/issues/581"],
+        ["UFV3YUHC", "https://redmine.qzc.co.jp/redmine/issues/581"],
+        ["L32TT44P", "https://redmine.qzc.co.jp/redmine/issues/581"],
+        ["FLATKCZX", "https://redmine.qzc.co.jp/redmine/issues/581"],
+        ["FFTRH70B", "https://redmine.qzc.co.jp/redmine/issues/2054"],
+      ];
+
+      function get(topicid){
+        return list.forEach(function(rec){
+          return rec[0] == topicid;
+        });
+      }
+
       var l = window.location;
-      l.replace(url + (l.pathname.match(/[^/]+$/) || [])[0]);
+      var rec = get( (l.pathname.match(/[^/]+$/) || [])[0] );
+      if(rec){
+        l.replace(rec[1] + "#" + topicid);
+      }
     </script>
   </head>
   <body>

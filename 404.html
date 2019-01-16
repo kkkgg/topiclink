@@ -27,7 +27,7 @@
         if(rec){
           var url = rec[1];
           console.log({redirect_to: url});
-          if(url.match(/^file:/){
+          if(url.match(/^file:/)){
             alert(url + "\n" * topicid);
           } else{
             l.replace(url + "#" + topicid);

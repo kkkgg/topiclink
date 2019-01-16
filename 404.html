@@ -34,7 +34,7 @@
       ];
 
       function getRec(topicid){
-        return list.forEach(function(rec){
+        return list.find(function(rec){
           return rec[0] == topicid;
         });
       }

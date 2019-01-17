@@ -7,6 +7,7 @@ FLATKCZX	https://redmine.qzc.co.jp/redmine/issues/581
 FFTRH70B	https://redmine.qzc.co.jp/redmine/issues/2054
 WORKINDX	file:///C:/boku/kami/index.txt
 D7Q0P4CC	https://redmine.qzc.co.jp/redmine/issues/581
-TSHXRMGO	file://partner-env.git/chef/README.txt
-7JQPN0R6	file://partner-env.git/chef/README.txt
-WXPDWFRQ	file://partner-env.git/chef/README.txt
+TSHXRMGO	git://partner-env.git/chef/README.txt
+7JQPN0R6	git://partner-env.git/chef/README.txt
+WXPDWFRQ	git://partner-env.git/chef/README.txt
+662QP2CL	git://partner-env.git/chef/README.txt

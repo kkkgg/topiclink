@@ -11,3 +11,4 @@ TSHXRMGO	git://partner-env.git/chef/README.txt
 7JQPN0R6	git://partner-env.git/chef/README.txt
 WXPDWFRQ	git://partner-env.git/chef/README.txt
 662QP2CL	git://partner-env.git/chef/README.txt
+DQTYVHXX	https://redmine.qzc.co.jp/redmine/issues/2105

@@ -6,3 +6,4 @@ L32TT44P	https://redmine.qzc.co.jp/redmine/issues/581
 FLATKCZX	https://redmine.qzc.co.jp/redmine/issues/581
 FFTRH70B	https://redmine.qzc.co.jp/redmine/issues/2054
 WORKINDX	file:///C:/boku/kami/index.txt
+D7Q0P4CC  https://redmine.qzc.co.jp/redmine/issues/581
